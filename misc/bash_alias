@@ -1,0 +1,12 @@
+alias a=alias
+a b="cd .."
+alias aedit="vim ~/.bash_alias"
+alias aup=" . ~/.bash_alias"
+
+#
+#functions
+#
+function cdl {
+cd $1;
+ls;
+}

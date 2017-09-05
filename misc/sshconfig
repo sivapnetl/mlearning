@@ -1,0 +1,8 @@
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+Host dev
+    User git
+    HostName github.com
+    IdentityFile ~/.ssh/id_rsa.github
+    IdentityFile ~/.ssh/topeng-workbench.pem
