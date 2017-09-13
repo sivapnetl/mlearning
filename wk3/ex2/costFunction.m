@@ -20,8 +20,16 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% Cost Function
+H = sigmoid(X * theta);
 
+J  = sum((-y .* log(H)) - (1 .- y) .* log( 1 .- H)) / m;
 
+%Gradient
+diff = H - y;
+for id = 1:size(theta)
+  grad(id) = sum(diff .* X( :, id))/m;
+end
 
 
 

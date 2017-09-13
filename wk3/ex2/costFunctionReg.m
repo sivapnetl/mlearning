@@ -17,9 +17,26 @@ grad = zeros(size(theta));
 %               Compute the partial derivatives and set grad to the partial
 %               derivatives of the cost w.r.t. each parameter in theta
 
+n = size(theta);
 
+%cost function
+H = sigmoid(X * theta);
+J = sum(-y .* log(H) - (1 .- y) .* log( 1 .- H))/m;
+% skip Theta(0) for regularization
+reg = sum (theta(2:n) .* theta(2:n)) * (lambda/ (2 * m));
+J += reg;
 
+%Gradient
+diff = H - y;
 
+% No regulization for theta(0)
+grad(1) = sum(diff .* X(:, 1))/m;
+
+for i = 2:n
+  sum1 = sum(diff .* X(:, i))/m;
+  reg1 = (lambda * theta(i))/m;
+  grad(i) = sum1 + reg1;
+end
 
 
 % =============================================================
