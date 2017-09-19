@@ -1,6 +1,6 @@
   [alias]
   co = checkout
-  cia = "commit -a --author='Siva Pochiraju <siva@topeng.io>'"
+  cia = "commit -a --author='Siva Pochiraju <sivap.netl@gmail.com>'"
   st = status
   br = branch
   cp = cherry-pick
@@ -37,3 +37,6 @@
 
   type = cat-file -t
   dump = cat-file -p
+[user]
+	name = Siva Pochiraju
+	email = sivap.netl@gmail.com
