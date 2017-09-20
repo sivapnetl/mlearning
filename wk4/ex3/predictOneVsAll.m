@@ -29,8 +29,14 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
-
-
+res = zeros(num_labels, 1);
+for n = 1:m
+  for k = 1:num_labels
+    res(k) = sigmoid(sum(all_theta(k, :) .* X(n, :)));
+  end
+  %[m, p(n)] = max(res, [], 1); this also works !!
+  [m, p(n)] = max(res);
+end
 
 
 
